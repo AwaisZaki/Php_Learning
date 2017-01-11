@@ -7,17 +7,19 @@
 <body>
 <?php 
 
-if($_POST["location"])
+if(isset($_POST["location"]))
 
 {
     $location = $_POST['location'];
 
     header("Location: $location");
+
+    exit();
 }
 
 
 ?>
-
+<p>Choose a site to visit :</p>
 <form action="<?php $_PHP_SELF ?>" method="POST">
 
 Select: <select name="location">
