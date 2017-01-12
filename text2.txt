@@ -1,1 +1,1 @@
-this is file
+this is written by fwrite() function and the size of the file is in Bytes
