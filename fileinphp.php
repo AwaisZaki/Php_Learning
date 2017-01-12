@@ -145,6 +145,8 @@ else
         fclose($file);
 echo "<b>feof() function check the End file has been reached or not and fgets() function returns a line from an open file.</b></div>";
 
+
+
   ?> 
 
 
