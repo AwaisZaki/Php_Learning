@@ -15,7 +15,7 @@ Password: <input type="password" name="pwd" />
 </form>
 <br/>
 <p>GET METHOD</p>
-<form action="<?php $_PHP_SELF ?>" method="GET">
+<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="GET">
 City: <input type="text" name="city" />
 country: <input type="text" name="country" />
 <input type="submit" />
