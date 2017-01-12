@@ -85,9 +85,21 @@ echo readfile("text2.txt");
 
         echo "<br/><b>The above content is copyied through copy() function</b></div>";
 
+        echo "<h3>Deleting a file...</h3>";
 
+        $delete = "dlt.txt";
+        $deleteFileOpen =fopen($delete,"w");
+        fclose($deleteFileOpen);//uncomments and then comments for deleting file
+        //chown($delete,0755);
+        if (!unlink($delete))
+  {
+  echo ("Error deleting $delete");
+  }
+else
+  {
+  echo ("Deleted $delete");
+  }
 
-       
     ?> 
 
 </body>
