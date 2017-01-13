@@ -81,6 +81,7 @@ function test_input($data)
 
 ?>
 
+
     <h1 style="text-align:center;">Form Validaton</h1>
 
     <form method="POST" action="<?php htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
@@ -123,9 +124,38 @@ function test_input($data)
          echo "<br/><br/>";
          echo "Gender: ".$gender;
         
-         
+                 
          ?>
     
+    <?php // Connection to database
+
+    $con = mysql_connect("localhost","root","") or die('try again in some minutes, please');
+    mysql_select_db("formvalidation",$con);
+
+    if(isset($_REQUEST["submit"]))
+    {
+        $dbname    = $_REQUEST["name"];
+        $dbemail   = $_REQUEST["email"];
+        $dbwebsite = $_REQUEST["website"];
+        $dbcomment = $_REQUEST["comment"];
+        $dbgender  = $_REQUEST["gender"];
+
+        mysql_query("insert into userdata(name, email, website, comment, gender) values('$dbname', '$dbemail', '$dbwebsite', '$dbcomment', '$dbgender')");
+    
+                echo $dbname."<br>";
+				echo $dbemail."<br>";
+				echo $dbwebsite."<br>";
+				echo $dbcomment."<br>";
+				echo $dbgender."<br>";
+                
+                echo "<h1>User insert data successfully</h1>";
+    
+    } 
+
+   
+    
+    
+     ?>
 
 
 
